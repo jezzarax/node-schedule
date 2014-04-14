@@ -252,6 +252,11 @@ var fromCronStringTests = {};
 	['1 2 3 4 5', 			rr(null, 3, 3, 5, 2, 1, null)],
 	['1 2 3 4 5 2014', 	rr(2014, 3, 3, 5, 2, 1, null)],
 
+	// full support for day of week [0-7]
+
+	['1 2 3 4 0', 			rr(null, 3, 3, 0, 2, 1, null)],
+	['1 2 3 4 7', 			rr(null, 3, 3, 0, 2, 1, null)],
+
 	// Multiple times, ranges and intervals
 	['5,10,15 * * * *', 	rr(null, null, null, null, null, [5, 10, 15], null)],
 	['5-10 * * * *', 			rr(null, null, null, null, null, new schedule.Range(5, 10), null)],
